@@ -128,9 +128,11 @@ Import it in `styles.css`:
 @import url('./views/events-view.css');
 ```
 
-You can also see in this file `@import url('lumo-css-framework/all-classes.css');`
+The name of the event should be in blue, the primary color of Lumo theme. If you're comfortable with CSS, you can design the list of events with custom css.
 
-This file contains a lot of utility css classes that already uses the default values of the main Vaadin theme `Lumo`
+In `styles.css`, you can also see in this file `@import url('lumo-css-framework/all-classes.css');`
+
+This file contains a lot of utility css classes that already uses the default values of the main Vaadin theme `Lumo`.
 
 ## Create an Event Card
 
