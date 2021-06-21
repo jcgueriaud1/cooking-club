@@ -129,3 +129,4 @@ export class EventsView extends View {
 
 That gives you a good separation between this view and the backend.
 
+You can go to the next [step](3__subscribe-event.md)
