@@ -134,7 +134,7 @@ export class AppStore {
 export const uiStore = appStore.uiStore;
 ```
 
-You can create your own login page and customize it:
+You can create your own login page `login-view.ts` in `frontend/main/` and customize it:
 
 ```ts
 import { customElement, html, state } from 'lit-element';
