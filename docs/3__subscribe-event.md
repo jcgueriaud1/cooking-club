@@ -303,7 +303,13 @@ Bind each field:
 }
 ```
 
-You can notice the required indicators for each field and the email field is validated if you edit the field.
+You can notice the required indicators for each field and the email field is validated if you edit the field. It's coming from the annotations written in `Subscriber.java`.
+
+You can try to add a new annotation on the lastname:
+```java
+  @Size(min = 3)
+````
+And check the result in the form.
 
 ## Form actions
 
