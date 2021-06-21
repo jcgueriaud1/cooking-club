@@ -155,3 +155,6 @@ Replace the `render` function in `events-view.ts` with this one:
       </div>`;
   }
 ```
+
+
+You can go to the next [step](2__event-store.md)
