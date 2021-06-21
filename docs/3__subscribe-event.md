@@ -407,3 +407,5 @@ Update the event card in events-view.ts:
   Attendees: ${event.nbAttendees} / ${event.maxAttendees}
 </div>
 ```
+
+You can go to the next [step](4__secure-app.md)
