@@ -235,7 +235,7 @@ Then replace the configure function in the Spring Security configuration `Securi
 
 ## Logout button
 
-Add a Logout button in the `main-view.ts`:
+Add a Logout button in the `main-view.ts` after the `vaadin-avatar`:
 
 ```ts
   <vaadin-button @click="${() => uiStore.logout()}">Logout</vaadin-button>
