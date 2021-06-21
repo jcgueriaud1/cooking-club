@@ -3,15 +3,16 @@ package com.example.application.data;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.security.PermitAll;
+
 import com.vaadin.flow.server.connect.EndpointExposed;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 import org.springframework.data.domain.Page;
 import org.vaadin.artur.helpers.CrudService;
 import org.vaadin.artur.helpers.GridSorter;
 import org.vaadin.artur.helpers.PagingUtil;
 
-@AnonymousAllowed
+@PermitAll
 @EndpointExposed
 public abstract class CrudEndpoint<T, ID> {
 

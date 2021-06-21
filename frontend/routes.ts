@@ -1,6 +1,7 @@
 import { Route } from '@vaadin/router';
 import './views/eventgrid/event-grid-view';
 import './views/main/main-view';
+import './views/main/login-view';
 import './views/events/events-view';
 
 export type ViewRoute = Route & { title?: string; children?: ViewRoute[] };
@@ -24,5 +25,9 @@ export const routes: ViewRoute[] = [
     path: '',
     component: 'main-view',
     children: [...views],
+  },
+  {
+    path: '/login',
+    component: 'login-view',
   },
 ];

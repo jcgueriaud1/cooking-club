@@ -2,11 +2,12 @@ package com.example.application.data.endpoint;
 
 import java.util.Optional;
 
+import javax.annotation.security.PermitAll;
+
 import com.example.application.data.entity.Event;
 import com.example.application.data.entity.Subscriber;
 import com.example.application.data.service.EventService;
 import com.example.application.data.service.SubscriberService;
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 import com.vaadin.flow.server.connect.Endpoint;
 
 @Endpoint
@@ -20,7 +21,7 @@ public class SubscriberEndpoint {
     this.eventService = eventService;
   }
 
-  @AnonymousAllowed
+  @PermitAll
   public Subscriber subscribeTo(Subscriber entity) {
     Optional<Event> eventOptional = eventService.get(entity.getEvent().getId());
     Event event = eventOptional.orElseThrow();

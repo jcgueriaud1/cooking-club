@@ -7,7 +7,7 @@ import '@vaadin/vaadin-tabs/vaadin-tab';
 import { customElement, html } from 'lit-element';
 import { router } from '../../index';
 import { views } from '../../routes';
-import { appStore } from '../../stores/app-store';
+import { appStore, uiStore } from '../../stores/app-store';
 import { Layout } from '../view';
 
 interface RouteInfo {
@@ -23,7 +23,7 @@ export class MainView extends Layout {
         <header slot="navbar" theme="dark" class="sidemenu-header">
           <vaadin-drawer-toggle></vaadin-drawer-toggle>
           <h1>${appStore.currentViewTitle}</h1>
-          <vaadin-avatar></vaadin-avatar>
+          <vaadin-avatar></vaadin-avatar> <vaadin-button @click="${() => uiStore.logout()}">Logout</vaadin-button>
         </header>
 
         <div slot="drawer" class="sidemenu-menu">

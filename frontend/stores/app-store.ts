@@ -1,9 +1,11 @@
 import { RouterLocation } from '@vaadin/router';
 import { makeAutoObservable } from 'mobx';
 import { EventStore } from './event-store';
+import { UiStore } from './ui-store';
 
 export class AppStore {
   eventStore = new EventStore();
+  uiStore = new UiStore();
   applicationName = 'Cooking club';
 
   // The location, relative to the base path, e.g. "hello" when viewing "/hello"
@@ -28,3 +30,4 @@ export class AppStore {
 }
 export const appStore = new AppStore();
 export const eventStore = appStore.eventStore;
+export const uiStore = appStore.uiStore;
