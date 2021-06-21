@@ -386,3 +386,5 @@ You can now update the vaadin-avatar and use the property name. In `main-view.ts
 ```
 
 You also have the role of your users that you can use to hide some menu items.
+
+You can go to the next [step](6__deploy_heroku.md)
