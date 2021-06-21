@@ -254,6 +254,8 @@ ${eventStore.selectedEvent
           : ''}
 ```
 
+At this point, you should see the event list and when you click on `Subscribe` the subscription form should appear with the name of the event.
+
 ## Bind the subscription form
 
 Vaadin Fusion uses Binder for binding form input fields to a model. Binder also performs input validation and form submission.
