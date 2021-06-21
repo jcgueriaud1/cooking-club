@@ -1,22 +1,17 @@
-import Event from 'Frontend/generated/com/example/application/data/entity/Event';
-import { EventEndpoint } from 'Frontend/generated/EventEndpoint';
+import { eventStore } from 'Frontend/stores/app-store';
 import { customElement, html, state } from 'lit-element';
 import { View } from '../../views/view';
 
 @customElement('events-view')
 export class EventsView extends View {
-  @state()
-  private _events: Event[] = [];
-
   async connectedCallback() {
     super.connectedCallback();
     this.classList.add('pl-m', 'flex', 'flex-col', 'h-full');
-    this._events = await EventEndpoint.findAll();
   }
 
   render() {
     return html` <div class="grid grid-cols-3 gap-m p-m overflow-auto">
-      ${this._events.map(
+      ${eventStore.events.map(
         (event) => html`<div class="shadow-s rounded-m">
           <div class="bg-primary-10 p-s text-m">${event.name}</div>
           <div class="p-s">
