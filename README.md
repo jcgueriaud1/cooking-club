@@ -31,5 +31,5 @@ All the steps for the workshop are in the docs folder, you can start in the main
 | &nbsp;&nbsp;&nbsp;&nbsp;`main-layout.ts`   | Main layout Web Component, contains the navigation menu, uses [App Layout](https://vaadin.com/components/vaadin-app-layout) |
 | &nbsp;&nbsp;&nbsp;&nbsp;`views/`           | UI views Web Components (TypeScript)                                                                                        |
 | &nbsp;&nbsp;&nbsp;&nbsp;`styles/`          | Styles directory (CSS)                                                                                                      |
-| `src/main/java/<groupId>/`                 | Server-side source directory, contains the server-side Java views                                                           |
+| `src/main/java/com/example/application`                 | Server-side source directory, contains the server-side Java views                                                           |
 | &nbsp;&nbsp;&nbsp;&nbsp;`Application.java` | Server entrypoint                                                                                                           |
