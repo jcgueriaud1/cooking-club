@@ -162,5 +162,7 @@ Replace the `render` function in `events-view.ts` with this one:
   }
 ```
 
+Now you should see the list of events in a 3-columns grid. Each event is displayed as a card with simple html elements and some css-utility classes.
+
 
 You can go to the next [step](2__event-store.md)
