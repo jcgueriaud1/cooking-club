@@ -313,7 +313,7 @@ And check the result in the form.
 
 ## Form actions
 
-`Cancel` removes the selected Event.
+`Cancel` removes the selected Event. Modify the `subscription-form.ts`
 
 ```ts
 
@@ -342,7 +342,7 @@ import { showNotification } from 'Frontend/../target/flow-frontend/a-notificatio
     >Subscribe</vaadin-button>
 ```
 
-Update the event-store.ts and add the new function subscribeTo that will:
+Update the `event-store.ts` and add the new function `subscribeTo` that will:
 
 - save the data in the backend
 - removes the selected event
