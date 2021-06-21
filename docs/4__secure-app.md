@@ -238,3 +238,6 @@ Add a Logout button in the `main-view.ts`:
 ```
 
 Then you should see the new login page after logout.
+
+
+You can go to the next [step](5__offline.md)
