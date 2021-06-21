@@ -393,7 +393,7 @@ This will rest the Subscriber on selectedEvent change.
 ## Retrieve the number of attendees of the event
 
 Normally the data is saved, but it could be better to see the result, for example the number of attendees.
-In Subscriber.java add a new calculated attribute and the getter and setter:
+In `Event.java add a new calculated attribute and the getter and setter:
 
 ```java
     @Formula("(select count(s.id) from Subscriber s where s.event_id = id)")
