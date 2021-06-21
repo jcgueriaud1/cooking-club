@@ -58,6 +58,8 @@ import './subscription-form';
   }
 ```
 
+At this point, you should see the subscription form on the right side of the list of events.
+
 ## Create a new Java Entity `Subscriber`
 
 In order to save the data in the database you need to create an Entity `Subscriber.java` in `src/main/java/com/example/application/data/entity`:
