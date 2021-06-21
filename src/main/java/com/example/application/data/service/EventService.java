@@ -1,12 +1,12 @@
 package com.example.application.data.service;
 
+import java.util.List;
+
 import com.example.application.data.entity.Event;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.vaadin.artur.helpers.CrudService;
-import java.time.LocalDateTime;
-import javax.annotation.Nullable;
 
 @Service
 public class EventService extends CrudService<Event, Integer> {
@@ -20,6 +20,10 @@ public class EventService extends CrudService<Event, Integer> {
     @Override
     protected EventRepository getRepository() {
         return repository;
+    }
+
+    public List<Event> findAll() {
+        return repository.findAll();
     }
 
 }

@@ -43,6 +43,7 @@ export class EventsView extends View {
 
 To view the view as the homepage http://localhost:8080/ you can update the `views` variable in `frontend/routes.ts`.
 Replace the default path by the new view:
+
 ```ts
 export const views: ViewRoute[] = [
   // for client-side, place routes below (more info https://vaadin.com/docs/v19/flow/typescript/creating-routes.html)
@@ -96,8 +97,7 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 Now you will have a new function available for the anonymous users.
 
-
-You can fetch the data with the generated endpoint. Add the following code in `connectedCallback`:
+You can fetch the data with the generated endpoint. Add the following code in `connectedCallback` of `events-view.ts`:
 
 ```ts
 this._events = await EventEndpoint.findAll();
@@ -105,10 +105,15 @@ this._events = await EventEndpoint.findAll();
 
 You can use auto-import to import the EventEndpoint and also check all the methods you already have.
 
+```ts
+import { EventEndpoint } from 'Frontend/generated/EventEndpoint';
+```
+
 ## Use Custom CSS
 
 You can use custom css in the events-view.
 Create a new `events-view.css` in `frontend/themes/views/` :
+
 ```css
 events-view {
   display: block;
@@ -120,13 +125,16 @@ events-view .event-name {
 ```
 
 Import it in `styles.css`:
+
 ```css
 @import url('./views/events-view.css');
 ```
 
-You can also see in this file `@import url('lumo-css-framework/all-classes.css');`
+The name of the event should be in blue, the primary color of Lumo theme. If you're comfortable with CSS, you can design the list of events with custom css.
 
-This file contains a lot of utility css classes that already uses the default values of the main Vaadin theme `Lumo`
+In `styles.css`, you can also see in this file `@import url('lumo-css-framework/all-classes.css');`
+
+This file contains a lot of utility css classes that already uses the default values of the main Vaadin theme `Lumo`.
 
 ## Create an Event Card
 
@@ -155,3 +163,7 @@ Replace the `render` function in `events-view.ts` with this one:
       </div>`;
   }
 ```
+
+Now you should see the list of events in a 3-columns grid. Each event is displayed as a card with simple html elements and some css-utility classes.
+
+You can go to the next [step](2__event-store.md)

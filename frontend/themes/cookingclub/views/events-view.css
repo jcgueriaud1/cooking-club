@@ -1,0 +1,7 @@
+events-view {
+  display: block;
+}
+
+events-view .event-name {
+  color: var(--lumo-primary-color);
+}
