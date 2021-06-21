@@ -25,10 +25,11 @@ export class LoginView extends View implements AfterEnterObserver {
     super.connectedCallback();
     this.classList.add('flex', 'flex-col', 'items-center', 'justify-center');
   }
-
   render() {
     return html`
-      <vaadin-login-form no-forgot-password .error="${this.error}" @login="${this.login}"> </vaadin-login-form>
+      <vaadin-login-form no-forgot-password .error="${this.error}" @login="${this.login}" ?disabled=${uiStore.offline}>
+      </vaadin-login-form>
+      ${uiStore.offline ? html`You are currently offline. You need to be online to login into the application` : ''}
     `;
   }
 

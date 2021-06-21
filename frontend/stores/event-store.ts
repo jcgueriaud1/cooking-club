@@ -3,6 +3,7 @@ import Event from 'Frontend/generated/com/example/application/data/entity/Event'
 import { EventEndpoint } from 'Frontend/generated/EventEndpoint';
 import Subscriber from 'Frontend/generated/com/example/application/data/entity/Subscriber';
 import { SubscriberEndpoint } from 'Frontend/generated/SubscriberEndpoint';
+import { cacheable } from './cache';
 
 export class EventStore {
   events: Event[] = [];
@@ -24,8 +25,7 @@ export class EventStore {
   }
 
   async initFromServer() {
-    const events = await EventEndpoint.findAll();
-
+    const events = await cacheable(EventEndpoint.findAll, 'event', []);
     runInAction(() => {
       this.events = events;
     });

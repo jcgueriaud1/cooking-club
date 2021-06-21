@@ -23,7 +23,8 @@ export class MainView extends Layout {
         <header slot="navbar" theme="dark" class="sidemenu-header">
           <vaadin-drawer-toggle></vaadin-drawer-toggle>
           <h1>${appStore.currentViewTitle}</h1>
-          <vaadin-avatar></vaadin-avatar> <vaadin-button @click="${() => uiStore.logout()}">Logout</vaadin-button>
+          <vaadin-avatar .name="${uiStore.authentication?.user.name}"></vaadin-avatar>
+          <vaadin-button @click="${() => uiStore.logout()}" ?disabled=${uiStore.offline}>Logout</vaadin-button>
         </header>
 
         <div slot="drawer" class="sidemenu-menu">
