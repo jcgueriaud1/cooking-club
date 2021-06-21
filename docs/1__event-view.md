@@ -97,13 +97,17 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 Now you will have a new function available for the anonymous users.
 
 
-You can fetch the data with the generated endpoint. Add the following code in `connectedCallback`:
+You can fetch the data with the generated endpoint. Add the following code in `connectedCallback` of `events-view.ts`:
 
 ```ts
 this._events = await EventEndpoint.findAll();
 ```
 
 You can use auto-import to import the EventEndpoint and also check all the methods you already have.
+
+```ts
+import { EventEndpoint } from 'Frontend/generated/EventEndpoint';
+```
 
 ## Use Custom CSS
 
