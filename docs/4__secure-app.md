@@ -203,6 +203,10 @@ export class LoginView extends View implements AfterEnterObserver {
 You also need to add this view as a route of your application, in route.ts, add the `login-view` in the `routes` parameter:
 
 ```ts
+import './views/main/login-view';
+
+...
+
 export const routes: ViewRoute[] = [
   {
     path: '',
