@@ -4,14 +4,13 @@
 
 Currently the application and all the endpoints are public.
 
-In this chapter we will:
+In this step we will:
 - Secure the application
 - Restrict the access by adding a login page
 - Secure the endpoints.
 
 ## Secure the application
 
-Stop your application.
 Add this dependency to your pom.xml
 
 ```xml
@@ -21,7 +20,11 @@ Add this dependency to your pom.xml
 </dependency>
 ```
 
-To configure the security, create a new configuration class extending the `VaadinWebSecurityConfigurerAdapter` class:
+After a change in `pom.xml`, you need to restart the application.
+
+To configure the security, create a new configuration class extending the `VaadinWebSecurityConfigurerAdapter` class.
+
+Add `SecurityConfig.java` in the package `com.example.application`:
 
 ```java
 @EnableWebSecurity
@@ -48,6 +51,10 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
 }
 ```
 
+In this file, two users have been configured:
+- `admin` with `admin` password
+- `user` with `user` password
+
 By default, all the resources will be secured. Make the images folder public, it contains the logo of your application:
 
 ```java
@@ -57,7 +64,7 @@ By default, all the resources will be secured. Make the images folder public, it
       web.ignoring().antMatchers("/images/**");
   }
 ```
-Start your application.
+
 Now your application has the default login page but the endpoints not yet secured.
 
 Update the Endpoints and replace `@AnonymousAllowed` to `@PermitAll`.
@@ -134,7 +141,7 @@ export class AppStore {
 export const uiStore = appStore.uiStore;
 ```
 
-You can create your own login page `login-view.ts` in `frontend/main/` and customize it:
+You can create your own login page `login-view.ts` in `frontend/views/main/` and customize it:
 
 ```ts
 import { customElement, html, state } from 'lit-element';
@@ -179,7 +186,7 @@ export class LoginView extends View implements AfterEnterObserver {
 
   async login(event: CustomEvent) {
     this.error = false;
-    // use the login helper method from auth.ts, which in turn uses
+    // use the login helper method from uiStore, which in turn uses
     // Vaadin provided login helper method to obtain the LoginResult
     const result = await uiStore.login(
       event.detail.username,
@@ -238,10 +245,17 @@ Then replace the configure function in the Spring Security configuration `Securi
 Add a Logout button in the `main-view.ts` after the `vaadin-avatar`:
 
 ```ts
+import { uiStore } from 'Frontend/stores/app-store';
+
+...
+
   <vaadin-button @click="${() => uiStore.logout()}">Logout</vaadin-button>
 ```
 
 Then you should see the new login page after logout.
+There are two users:
+- `admin` with `admin` password
+- `user` with `user` password
 
 
 You can go to the next [step](5__offline.md)

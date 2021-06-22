@@ -2,10 +2,10 @@
 
 ## Summary
 
-Currently the data is fetched in the view. If we continue this way, the view is directly bounded to the backend.
+Currently the view fetches the data. If we continue this way, the view is directly bounded to the backend.
 That will be an issue if we want to cache the data for the offline or if we want to share the same data in different views.
 
-In this chapter we will:
+In this step we will:
 
 - Create an event store that contains the logic to fetch the data
 - Update the view
@@ -45,6 +45,15 @@ export class EventStore {
 }
 ```
 
+`makeAutoObservable` traps existing object properties and make them observable. It takes in three arguments:
+- The observable class.
+- Overrides. By default (true), all fields are made into observed values, all functions into actions, and all getters into computed values.
+    - if value is set to false: MobX won't trap the property or function
+    - `observable.shallow`: Any collection assigned will be made observable, but the contents of the collection itself won't become observable.
+- Options. Enable `autoBind`, which will bind all actions to this class. It makes it easier to use them in listeners later on.
+
+You can read more about the observable state in MobX here: https://mobx.js.org/observable-state.html
+
 Update the main store app-store and save an instance of the event-store:
 
 ```ts
@@ -82,7 +91,7 @@ export const eventStore = appStore.eventStore;
 
 Now you can use this store in the `events-view.ts`.
 
-Remove the state _events
+Remove the state `_events`
 ```ts
 @state()
 private _events: Event[] = [];

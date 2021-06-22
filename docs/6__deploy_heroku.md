@@ -1,6 +1,6 @@
 # Package in production and deploy in Heroku
 
-In this chapter we will:
+In this step we will:
 
 - Package the application in production mode
 - Create a heroku account
@@ -9,6 +9,15 @@ In this chapter we will:
 
 ## Package the application in production
 
+Vaadin has a specific profile in maven to generate, optimize the bundle and build the application.
+
+Navigate to your project folder and run:
+
+```terminal
+mvn clean package -Pproduction
+```
+
+This builds a production-optimized JAR file in the target folder.
 
 ## Deploy to Heroku
 
@@ -27,7 +36,7 @@ Install the Java plugin:
 heroku plugins:install java
 ```
 
-Create the new application. You need to choose a unique APPNAME:
+Create the new application. You need to choose a unique *APPNAME*:
 ```terminal
 heroku create APPNAME
 ```
@@ -39,9 +48,10 @@ java.runtime.version=11
 
 This will tell Heroku to use Java 11 instead of Java 8.
 
-Deploy your production build:
+Deploy your production build. Don't forget to replace APPNAME with the chosen name:
+
 ```terminal
-heroku deploy:jar target/cookingclub-1.0-SNAPSHOT.jar -a cooking-club
+heroku deploy:jar target/cookingclub-1.0-SNAPSHOT.jar -a APPNAME
 ```
 
 You can check the logs using this command:

@@ -2,13 +2,40 @@
 
 ## Summary
 
-In this chapter we will:
+In this step we will:
 
 - Create a new view based on html elements
 - Fetch the data
 - Modify the design using your own css class
 - Add the menu entry
 - Modify the design using lumo-utility classes
+
+
+### Technical requirements
+
+This project is the starting point for the Cooking Club Workshop given in [SimpleWebConf 2021](https://simplewebconf.com/)
+
+You need the following tools and libraries to complete the workshop:
+- Java 8 or later and Maven. See [Installing Development Tools for instructions](https://vaadin.com/docs/v20/guide/install). The recommended Java version is Java 11.
+- Visual Studio Code is used in this tutorial. See the setup instructions on [YouTube](https://www.youtube.com/watch?v=G_aJONwi0qo).
+
+Unzip the downloaded file and open the project in your IDE. The instructions assume you use [VS Code](https://code.visualstudio.com/)
+
+Open the project by either:
+- Navigating to the project folder and running code . (note the period).
+- Choosing File > Open... in VS Code and selecting the project folder.
+  Installing the following plugins in VS Code is recommended for an optimal development experience:
+- [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+- [lit-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin)
+- [Spring Boot Tools](https://marketplace.visualstudio.com/items?itemName=Pivotal.vscode-spring-boot)
+  VS Code should automatically suggest these for you when you open the project.
+
+There are different ways to run the application:
+- To run from the command line, use `mvn spring-boot:run`
+- In VS Code with the Spring Boot Tools extension, you can use the panel `Spring Boot Dashboard` and click on Start
+- In VS Code, you can also navigate to `Application.java` right-click and choose `run Java`.
+
+Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ## Create the view
 
@@ -40,6 +67,10 @@ export class EventsView extends View {
   }
 }
 ```
+
+There are few things to notice in this example:
+- `classList` is a standard property that returns a collection of `class` attributes
+- `map` is a standard function that method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
 To view the view as the homepage http://localhost:8080/ you can update the `views` variable in `frontend/routes.ts`.
 Replace the default path by the new view:
@@ -130,9 +161,15 @@ Import it in `styles.css`:
 
 The name of the event should be in blue, the primary color of Lumo theme. If you're comfortable with CSS, you can design the list of events with custom css.
 
+
+## CSS Helper Classes
+
 In `styles.css`, you can also see in this file `@import url('lumo-css-framework/all-classes.css');`
 
-This file contains a lot of utility css classes that already uses the default values of the main Vaadin theme `Lumo`.
+This file contains a lot of utility css classes that already use the default values of the main Vaadin theme `Lumo`.
+The styles are now automatically available in all views and layouts. You can browse all the classes in `node_modules/lumo-css-framework/all-classes.css`
+
+For people who are familiar with tailwind, you will notice that the naming convention is quite similar.
 
 ## Create an Event Card
 

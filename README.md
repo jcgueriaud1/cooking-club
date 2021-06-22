@@ -10,7 +10,7 @@ Unzip the downloaded file and open the project in your IDE. The instructions ass
 
 Open the project by either:
 - Navigating to the project folder and running code . (note the period).
-- Choosing File > Open…​ in VS Code and selecting the project folder.
+- Choosing File > Open... in VS Code and selecting the project folder.
 Installing the following plugins in VS Code is recommended for an optimal development experience:
 - [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 - [lit-plugin](https://marketplace.visualstudio.com/items?itemName=runem.lit-plugin)

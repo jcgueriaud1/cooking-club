@@ -6,7 +6,7 @@ Currently the application requires a server to:
 - fetch the data
 - Login and logout
 
-In this chapter we will:
+In this step we will:
 
 - Detect if the application is offline
 - Disable some features if offline
@@ -113,6 +113,11 @@ In the `main-view.ts` update the Logout button:
 Do the same for the Subscribe button and the fields in `subscription-form.ts`:
 
 ```html
+
+import { uiStore } from 'Frontend/stores/app-store';
+
+...
+
 <vaadin-text-field
   label="First name"
   ?disabled="${uiStore.offline}"
@@ -167,7 +172,8 @@ You can also update the login, since the login page will always require the serv
 ## Cache the data
 
 We need to cache the data when the endpoint is done to retrieve it when offline.
-We can cache it in the localStorage with this utility class: `cache.ts`
+We can cache it in the localStorage with a utility class.
+Create a  new file `cache.ts` in `frontend/stores`
 
 ```ts
 const CACHE_NAME = 'event-cache';
@@ -257,7 +263,7 @@ public class UserInfo {
 }
 ```
 
-Then to retrieve the data wit a new `UserInfoEnpoint.java` :
+Then to retrieve the data we can add a new `UserInfoEnpoint.java` in `com.example.application.data.endpoint`:
 ```java
 package com.example.application.data.endpoint;
 
