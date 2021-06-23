@@ -420,10 +420,6 @@ In `Event.java add a new calculated attribute and the getter and setter:
         return nbAttendees;
     }
 
-    public void setNbAttendees(Integer nbAttendees) {
-        this.nbAttendees = nbAttendees;
-    }
-
 ```
 
 Update the event card in `events-view.ts`. Replace the `div` that contains the max attendees to this:
