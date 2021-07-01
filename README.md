@@ -1,6 +1,6 @@
 # Cooking Club Workshop for SimpleWebConf
 
-This project is the starting point for the Cooking Club Workshop given in [SimpleWebConf 2021](https://simplewebconf.com/)
+This project is the starting point for the Cooking Club Workshop given in [SimpleWebConf 2021](https://simplewebconf.com/), the slides are available [here](./Vaadin_SimpleWebConf%20-%20%20Cooking%20Club%20Workshop.pdf)
 
 You need the following tools and libraries to complete the workshop:
 - Java 8 or later and Maven. See [Installing Development Tools for instructions](https://vaadin.com/docs/v20/guide/install). The recommended Java version is Java 11.
